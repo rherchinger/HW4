@@ -73,6 +73,15 @@ public class Movies {
         this.producer = producer;
     }
 
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate){
+        this.releaseDate = releaseDate;
+        
+    }
+    
     public int getBoxOfficeEarnings() {
         return boxOfficeEarnings;
     }
@@ -92,6 +101,10 @@ public class Movies {
     @Override
     public String toString() {
         return "Movies{" + "movieID=" + movieID + ", movieTitle=" + movieTitle + ", genre=" + genre + ", mainActor=" + mainActor + ", producer=" + producer + ", releaseDate=" + releaseDate + ", boxOfficeEarnings=" + boxOfficeEarnings + ", productionBudget=" + productionBudget + '}';
+    }
+
+    public void setReleaseDate(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
