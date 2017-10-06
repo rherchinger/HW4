@@ -8,6 +8,6 @@
     <body>
         <h1>Ryan's Movies Database</h1>
         
-        <a href="read">View All Friends</a>
+        <a href="read">View All Movies Now</a>
     </body>
 </html>
