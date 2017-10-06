@@ -6,8 +6,8 @@
         <title>My Movies</title>
     </head>
     <body>
-        <h1>My Movies Database</h1>
+        <h1>Ryan's Movies Database</h1>
         
-        <a href="/read">View All Friends</a>
+        <a href="read">View All Friends</a>
     </body>
 </html>
