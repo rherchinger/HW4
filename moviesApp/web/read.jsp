@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Movies JSP page</title>
     </head>
     
     <% String table = (String) request.getAttribute("table"); %>

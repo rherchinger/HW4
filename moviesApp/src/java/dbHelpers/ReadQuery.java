@@ -81,6 +81,7 @@ public class ReadQuery {
                 movie.setProductionBudget(this.results.getInt("productionBudget"));
                 
                 table += "<tr>";
+                
                 table += "<td>";
                 table += movie.getMovieID();
                 table += "</td>";
@@ -132,8 +133,5 @@ public class ReadQuery {
         
     }
 
-    private void releaseDate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }
