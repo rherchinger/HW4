@@ -102,15 +102,6 @@ public class Movies {
     public String toString() {
         return "Movies{" + "movieID=" + movieID + ", movieTitle=" + movieTitle + ", genre=" + genre + ", mainActor=" + mainActor + ", producer=" + producer + ", releaseDate=" + releaseDate + ", boxOfficeEarnings=" + boxOfficeEarnings + ", productionBudget=" + productionBudget + '}';
     }
-
-    public void setReleaseDate(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
-    
-    
-    
-    
-    
-    
+  
 }

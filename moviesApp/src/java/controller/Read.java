@@ -5,8 +5,10 @@
  */
 package controller;
 
+import dbHelpers.ReadQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -58,7 +60,10 @@ public class Read extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        //pass execution on to doPost
+            doPost(request, response);
+        
     }
 
     /**
@@ -72,7 +77,24 @@ public class Read extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+            //Create a ReadQuery helper object
+            ReadQuery rq = new ReadQuery();
+            
+            //Get the HTML table from ReadQuery object
+            rq.doRead();
+            String table = rq.getHTMLTable();
+            
+            //Pass execution control to read.jsp along with the table.
+            request.setAttribute("table", table);
+            String url = "/read.jsp";
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+            dispatcher.forward(request, response);
+        
+        
+        
+        
     }
 
     /**
