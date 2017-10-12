@@ -118,7 +118,8 @@ public class ReadQuery {
                 table += formatter.format(movie.getProductionBudget());
                 table += "</td>";
                 
-                
+                table += "<td>";
+                table += "<a href=delete?movieID=" + movie.getMovieID() + "> Delete </a>";
                 
                 table += "</tr>";
                 
