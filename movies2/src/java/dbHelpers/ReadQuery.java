@@ -62,9 +62,14 @@ public class ReadQuery {
         }
     }
     
+    /**
+     *
+     * @return
+     */
     public String getHTMLTable(){
         
-        String table = "";
+        String table;
+        table = "";
         table += "<table border=1>";
         
         try {
@@ -83,36 +88,36 @@ public class ReadQuery {
                 table += "<tr>";
                 
                 table += "<td>";
-                table += movie.getMovieID();
+                    table += movie.getMovieID();
                 table += "</td>";
                 
                 table += "<td>";
-                table += movie.getMovieTitle();
+                    table += movie.getMovieTitle();
                 table += "</td>";
                 
                 table += "<td>";
-                table += movie.getGenre();
+                    table += movie.getGenre();
                 table += "</td>";
                 
                 table += "<td>";
-                table += movie.getMainActor();
+                    table += movie.getMainActor();
                 table += "</td>";
                 
                 table += "<td>";
-                table += movie.getProducer();
+                    table += movie.getProducer();
                 table += "</td>";
                 
                 table += "<td>";
-                table += movie.getReleaseDate();
+                    table += movie.getReleaseDate();
                 table += "</td>";
                 
                 
                 table += "<td>";
-                table += movie.getBoxOfficeEarnings();
+                    table += movie.getBoxOfficeEarnings();
                 table += "</td>";
                 
                 table += "<td>";
-                table += movie.getProductionBudget();
+                    table += movie.getProductionBudget();
                 table += "</td>";
                 
                 

@@ -10,7 +10,6 @@
     
     <body>
         <h1>Ryan's Movies</h1>
-        
         <%= table %>
     </body>
 </html>

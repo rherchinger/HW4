@@ -7,8 +7,8 @@ public class Movies {
     private String mainActor;
     private String producer;
     private String releaseDate;
-    private int boxOfficeEarnings;
-    private int productionBudget;
+    private double boxOfficeEarnings;
+    private double productionBudget;
     
     
     public Movies() {
@@ -22,7 +22,7 @@ public class Movies {
         this.productionBudget = 0;
     }
     
-    public Movies(int movieID, String movieTitle, String genre, String mainActor, String producer, String releaseDate, int boxOfficeEarnings, int productionBudget) {
+    public Movies(int movieID, String movieTitle, String genre, String mainActor, String producer, String releaseDate, double boxOfficeEarnings, double productionBudget) {
         this.movieID = movieID;
         this.movieTitle = movieTitle;
         this.genre = genre;
@@ -82,19 +82,19 @@ public class Movies {
         
     }
     
-    public int getBoxOfficeEarnings() {
+    public double getBoxOfficeEarnings() {
         return boxOfficeEarnings;
     }
 
-    public void setBoxOfficeEarnings(int boxOfficeEarnings) {
+    public void setBoxOfficeEarnings(double boxOfficeEarnings) {
         this.boxOfficeEarnings = boxOfficeEarnings;
     }
 
-    public int getProductionBudget() {
+    public double getProductionBudget() {
         return productionBudget;
     }
 
-    public void setProductionBudget(int productionBudget) {
+    public void setProductionBudget(double productionBudget) {
         this.productionBudget = productionBudget;
     }
 

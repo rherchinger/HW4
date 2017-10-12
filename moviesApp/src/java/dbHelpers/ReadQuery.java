@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.NumberFormat;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -53,7 +54,7 @@ public class ReadQuery {
     public void doRead() {
         
         try {
-            String query = "Select * from movies";
+            String query = "Select * from Movies";
             
             PreparedStatement ps = conn.prepareStatement(query);
             this.results = ps.executeQuery();
@@ -77,8 +78,10 @@ public class ReadQuery {
                 movie.setMainActor(this.results.getString("mainActor"));
                 movie.setProducer(this.results.getString("producer"));
                 movie.setReleaseDate(this.results.getString("releaseDate"));
-                movie.setBoxOfficeEarnings(this.results.getInt("boxOfficeEarnings"));
-                movie.setProductionBudget(this.results.getInt("productionBudget"));
+                movie.setBoxOfficeEarnings(this.results.getDouble("boxOfficeEarnings"));
+                movie.setProductionBudget(this.results.getDouble("productionBudget"));
+                
+                NumberFormat formatter = NumberFormat.getCurrencyInstance();
                 
                 table += "<tr>";
                 
@@ -108,11 +111,11 @@ public class ReadQuery {
                 
                 
                 table += "<td>";
-                table += movie.getBoxOfficeEarnings();
+                table += formatter.format(movie.getBoxOfficeEarnings());
                 table += "</td>";
                 
                 table += "<td>";
-                table += movie.getProductionBudget();
+                table += formatter.format(movie.getProductionBudget());
                 table += "</td>";
                 
                 
