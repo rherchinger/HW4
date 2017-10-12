@@ -12,5 +12,11 @@
         <h1>Ryan's Movies</h1>
         
         <%= table %>
+        
+        <br><br>
+        
+        <a href="add">Add A New Movie</a>
+        
+        
     </body>
 </html>
