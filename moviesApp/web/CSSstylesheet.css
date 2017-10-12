@@ -1,0 +1,14 @@
+body{background-color: #D2B48C;}
+
+table{margin: 30px;}
+
+td{
+   background-color: #F08080;
+   color: #FFFFFF;
+}
+
+th{
+    background-color: #FFFF99;
+    color: #696969;
+    
+}
