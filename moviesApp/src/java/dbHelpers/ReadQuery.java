@@ -66,7 +66,30 @@ public class ReadQuery {
     public String getHTMLTable(){
         
         String table = "";
-        table += "<table border=1>";
+        
+        table += "<table>";
+        
+            table+= "<tr>";
+            
+            table+= "<th>Movie ID</th>";
+            table+= "<th>Movie Title</th>";
+            table+= "<th>Genre</th>";
+            table+= "<th>Main Actor</th>";
+            table+= "<th>Producer</th>";
+            table+= "<th>Release Date</th>";
+            table+= "<th>Box Office Earnings</th>";
+            table+= "<th>Production Budget</th>";
+            table+= "<th>Update/Delete</th>";
+            
+            
+            
+            
+            
+            table+= "</tr>";
+        
+        
+        
+        
         
         try {
             while(this.results.next()){
