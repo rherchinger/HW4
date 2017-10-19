@@ -3,13 +3,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Add A New Friend</title>
         <link rel="stylesheet" type="text/css" href="./CSS/newcss.css"/>
+        <title>Add A New Movie</title>
     </head>
     <body>
-        <h1>Add A New Friend</h1>
+        <h1>Add A New Movie</h1>
         
-        <form name="addForm" action="addMovie" method="get" class="addform">
+        <form name="addForm" action="addMovie" method="get" class="add">
         
             <label>Movie Title:</label>
             <input type="text" name="movieTitle" value="" />
