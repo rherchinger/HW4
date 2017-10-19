@@ -15,7 +15,7 @@
         <form name="updateForm" action="updateMovie" method="get" class="update">
         
             <label>Movie ID:</label>
-            <input type="text" name="id" value="<%= movie.getMovieID() %>" />
+            <input type="text" name="id" value="<%= movie.getMovieID() %>" readonly/>
             <br>
             
             <label>Movie Title:</label>

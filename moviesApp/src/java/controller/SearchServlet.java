@@ -5,7 +5,7 @@
  */
 package controller;
 
-import dbHelpers.UpdateQuery;
+import dbHelpers.SearchQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -14,14 +14,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Movies;
 
 /**
  *
  * @author rherchinger
  */
-@WebServlet(name = "UpdateServlet", urlPatterns = {"/updateMovie"})
-public class UpdateServlet extends HttpServlet {
+@WebServlet(name = "SearchServlet", urlPatterns = {"/search"})
+public class SearchServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,10 +39,10 @@ public class UpdateServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UpdateServlet</title>");            
+            out.println("<title>Servlet SearchServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UpdateServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SearchServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -61,9 +60,9 @@ public class UpdateServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
         //Pass execution on to doPost
-            doPost(request,response);
+        doPost(request,response);
     }
 
     /**
@@ -78,38 +77,23 @@ public class UpdateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        //get the form data and set up a Movie object
-        int movieID = Integer.parseInt(request.getParameter("id"));
-        String movieTitle = request.getParameter("movieTitle");
-        String genre = request.getParameter("genre");
-        String mainActor = request.getParameter("mainActor");
-        String producer = request.getParameter("producer");
-        String releaseDate = request.getParameter("releaseDate");
-        double boxOfficeEarnings = Double.parseDouble(request.getParameter("boxOfficeEarnings"));
-        double productionBudget = Double.parseDouble(request.getParameter("productionBudget"));
-        
-        Movies movie = new Movies();
-        movie.setMovieID(movieID);
-        movie.setMovieTitle(movieTitle);
-        movie.setGenre(genre);
-        movie.setMainActor(mainActor);
-        movie.setProducer(producer);
-        movie.setReleaseDate(releaseDate);
-        movie.setBoxOfficeEarnings(boxOfficeEarnings);
-        movie.setProductionBudget(productionBudget);
-        
-        //create an UpdateQuery object and use it to update the friend
-        UpdateQuery uq = new UpdateQuery();
-        uq.doUpdate(movie);
-        
-        //pass control to the ReadServlet
-        String url = "/read";
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-        dispatcher.forward(request, response);
-        
-        
-        
+            //Get the text to scratch
+            String movieTitle = request.getParameter("searchVal");
+            
+            //Create a SearchQuery helper object
+            SearchQuery sq = new SearchQuery();
+            
+            //Get the HTML table from the SearchQuery object
+            sq.doSearch(movieTitle);
+            String table = sq.getHTMLTable();
+            
+            //Pass execution control to read.jsp along with the table.
+            request.setAttribute("table", table);
+            String url = "/read.jsp";
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+            dispatcher.forward(request,response);
+            
     }
 
     /**

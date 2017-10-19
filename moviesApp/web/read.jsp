@@ -17,6 +17,8 @@
         <br><br>
         
         <a href="add">Add A New Movie</a>
+        <br><br>
+        <a href="search.jsp">Search Movies</a>
         
         
     </body>

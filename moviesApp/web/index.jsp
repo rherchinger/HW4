@@ -9,5 +9,8 @@
         <h1>Ryan's Movies Database</h1>
         
         <a href="read">View All Movies Now</a>
+        <br><br>
+        <a href="search.jsp">Search Movies</a>
+        
     </body>
 </html>
