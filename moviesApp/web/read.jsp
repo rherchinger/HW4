@@ -10,6 +10,16 @@
     <% String table = (String) request.getAttribute("table"); %>
     
     <body>
+         <div class="wrap"> <!--div to hold all other dives-->
+        
+            <%@ include file="includes/header.jsp" %>
+        
+            <!--Menu-->
+            <%@ include file="includes/menu.jsp" %>
+            
+            <!--Main-->
+            <div class="main"> <!-- main div-->
+        
         <h1>Ryan's Movies</h1>
         
         <%= table %>
@@ -19,6 +29,15 @@
         <a href="add">Add A New Movie</a>
         <br><br>
         <a href="search.jsp">Search Movies</a>
+        
+        </div> <!--close main div-->
+        
+        <br><br>
+        <!--footer-->
+            <%@ include file="includes/footer.jsp" %>
+        
+        
+        </div> <!-- close the wrap div -->
         
         
     </body>

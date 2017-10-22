@@ -82,7 +82,7 @@ public class Read extends HttpServlet {
             ReadQuery rq = new ReadQuery();
             
             //Get the HTML table from ReadQuery object
-             rq.doRead();
+            rq.doRead();
             String table = rq.getHTMLTable();
             
             //Pass execution control to read.jsp along with the table.
@@ -94,7 +94,7 @@ public class Read extends HttpServlet {
             
             //add test comment
         
-        
+        processRequest(request,response);
         
         
     }
