@@ -1,0 +1,13 @@
+
+.add td {border: none; hieght:25px; padding:10px; font-weight:bold;}
+
+.update td {border: none; hieght:25px; padding:10px; font-weight:bold;}
+
+h1{
+    background-color: #F08080;
+    color: #FFFFFF;
+    
+}
+
+
+input[readonly] {background-color:gray;}
