@@ -12,18 +12,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Movies;
 
-
 public class ReadRecord {
-    
+
     private Connection conn;
     private ResultSet results;
-    
+
     private Movies movie = new Movies();
     private int movieID;
-    
-    public ReadRecord (int movieID){
-    Properties props = new Properties(); //MWC
-    InputStream instr = getClass().getResourceAsStream("dbConn.properties");
+
+    public ReadRecord(int movieID) {
+        Properties props = new Properties(); //MWC
+        InputStream instr = getClass().getResourceAsStream("dbConn.properties");
         try {
             props.load(instr);
         } catch (IOException ex) {
@@ -34,14 +33,14 @@ public class ReadRecord {
         } catch (IOException ex) {
             Logger.getLogger(ReadRecord.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
-    String driver = props.getProperty("driver.name");
-    String url = props.getProperty("server.name");
-    String username = props.getProperty("user.name");
-    String passwd = props.getProperty("user.password");
-    
+
+        String driver = props.getProperty("driver.name");
+        String url = props.getProperty("server.name");
+        String username = props.getProperty("user.name");
+        String passwd = props.getProperty("user.password");
+
         this.movieID = movieID;
-    
+
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
@@ -52,9 +51,8 @@ public class ReadRecord {
         } catch (SQLException ex) {
             Logger.getLogger(ReadRecord.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
-    
-}
+
+    }
 
     public void doRead() {
 
@@ -86,14 +84,11 @@ public class ReadRecord {
                 Logger.getLogger(ReadRecord.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-                
-            
 
-        
     }
-    
-    public Movies getMovie(){
-        
+
+    public Movies getMovie() {
+
         return this.movie;
     }
 
